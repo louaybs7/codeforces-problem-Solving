@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int [] box = new int[n] ;
+        for (int i = 0; i < n; i++) {
+            box[i] = input.nextInt();
+        }
+        int change = 1;
+        while (change != 0) {
+            change = 0;
+
+            for (int i = 0; i < (n - 1); i++) {
+                if (box[i] > box[i+1]){
+                    int def = box[i] - box[i+1];
+                    box[i+1]=box[i+1] + def;
+                    box[i] =box[i] - def;
+                    change++;
+                }
+            }
+
+
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.println(box[i]);;
+        }
+
+    }
+}
