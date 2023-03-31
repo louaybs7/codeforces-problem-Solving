@@ -9,19 +9,9 @@ public class Main {
         for (int i = 0; i < word.length(); i++) {
             int ascii = word.charAt(i)  ;
             int position = Math.abs(ascii - start);
-            if( position <= 13 ) {
-                moves += position;
-                start = ascii;
-            }
-            else {
-                moves += 26 -position ;
-                start=ascii;
-            }
+            if( position <= 13 ) {moves += position ; }
+            else {moves += 26 -position ;}
         }
         System.out.println(moves);
         }
-
-
-
-
 }
