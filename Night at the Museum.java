@@ -5,21 +5,20 @@ public class Main {
         Scanner input = new Scanner(System.in);
         String word = input.next();
         int moves = 0 ;
-        int last_ascii = 'a';
+        int start = 'a';
         for (int i = 0; i < word.length(); i++) {
             int ascii = word.charAt(i)  ;
-            int m = Math.abs(ascii - last_ascii);
-            if( m <= 13 ) {
-                moves += m;
-                last_ascii = ascii;
+            int position = Math.abs(ascii - start);
+            if( position <= 13 ) {
+                moves += position;
+                start = ascii;
             }
             else {
-                moves += 26 -m ;
-                last_ascii=ascii;
+                moves += 26 -position ;
+                start=ascii;
             }
         }
         System.out.println(moves);
-
         }
 
 
